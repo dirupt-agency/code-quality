@@ -1,7 +1,7 @@
 {
 	"name": "@dirupt/prettier-config",
 	"description": "Dirupt's shared Prettier config",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"private": false,
 	"license": "MIT",
 	"main": "index.mjs",
