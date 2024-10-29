@@ -27,6 +27,7 @@ export const rulesImport = {
 	'import/extensions': [
 		'error',
 		{
+			"": "never",
 			js: 'never',
 			jsx: 'never',
 			svg: 'always',
