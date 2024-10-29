@@ -1,81 +1,97 @@
-# Turborepo starter
+# DIRUPT Code Quality Standards
 
-This is an official starter Turborepo.
+<br />
 
-## Using this example
+<div align="center">
+	<h3>Centralized Code Quality Configurations for DIRUPT Projects</h3>
+	<p>
+	The DIRUPT Code Quality monorepo provides shared configurations and standards to maintain consistent code style and quality across all DIRUPT projects. By centralizing configurations for tools like ESLint and Prettier, we ensure that our codebase remains maintainable, readable, and aligned with industry best practices.
+	</p>
+</div>
 
-Run the following command:
+<br />
+
+<div align="center">
+
+[![License](https://img.shields.io/github/license/dirupt-agency/code-quality?style=for-the-badge)](LICENSE.md) [![npm Version](https://img.shields.io/npm/v/@dirupt/eslint-config/latest.svg?style=for-the-badge&logo=npm&label=eslint-config)](https://www.npmjs.com/package/@dirupt/eslint-config) [![npm Version](https://img.shields.io/npm/v/@dirupt/prettier-config/latest.svg?style=for-the-badge&logo=npm&label=prettier-config)](https://www.npmjs.com/package/@dirupt/prettier-config&label=prettier-config)
+
+</div>
+
+## Packages
+
+The monorepo includes the following packages:
+
+- **[@dirupt/eslint-config](packages/eslint-config/README.md)**: Shared ESLint configurations tailored for various project types, including React, Next.js, TypeScript, and more.
+
+- **[@dirupt/prettier-config](packages/prettier-config/README.md)**: Base Prettier configuration used across DIRUPT projects to ensure consistent code formatting.
+
+## Installation
+
+Install the desired packages using your package manager. For example, using `pnpm`:
 
 ```sh
-npx create-turbo@latest
+pnpm add -D @dirupt/eslint-config @dirupt/prettier-config eslint prettier
 ```
 
-## What's inside?
+Ensure that you have the required peer dependencies installed as specified in each package's `package.json`.
 
-This Turborepo includes the following packages/apps:
+## Usage
 
-### Apps and Packages
+### ESLint Configuration
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@dirupt/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@dirupt/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@dirupt/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Import and extend the ESLint configurations in your project's ESLint configuration file (`.eslintrc.js`, `.eslintrc.json`, or `eslint.config.{js,mjs,ts}`).
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+For example, to use the Next.js configuration:
 
-### Utilities
+```js
+// eslint.config.mjs
+import { configNext } from '@dirupt/eslint-config'
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+export default configNext()
 ```
 
-### Develop
+Refer to each package's README for detailed usage instructions and available presets.
 
-To develop all apps and packages, run the following command:
+### Prettier Configuration
 
-```
-cd my-turborepo
-pnpm dev
-```
+Set the Prettier configuration in your project's `package.json`:
 
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```json
+{
+	"prettier": "@dirupt/prettier-config"
+}
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+Alternatively, you can create a `.prettierrc` file that extends the shared configuration:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
+```json
+{
+	"extends": "@dirupt/prettier-config"
+}
 ```
-npx turbo link
-```
 
-## Useful Links
+## Contributing
 
-Learn more about the power of Turborepo:
+Contributions are welcome! Please follow these steps to contribute:
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+1. Fork the repository.
+
+2. Create a new branch for your feature or bugfix.
+
+3. Commit your changes with clear and descriptive messages.
+
+4. Open a pull request outlining your changes and the problem they solve.
+
+Please ensure that your contributions adhere to the existing code styles and pass all linting and formatting checks.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+## Contact
+
+For any questions or support, please contact Philippe Desplats at [philippe@dirupt.com](mailto:philippe@dirupt.com).
+
+<div align="center">
+	<sub>Built with ❤︎ by <a href="https://www.dirupt.com">DIRUPT</a> Team - Maintaining <a href="https://github.com/dirupt-agency/code-quality">DIRUPT Code Quality</a></sub>
+</div>
