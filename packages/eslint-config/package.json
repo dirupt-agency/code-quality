@@ -1,7 +1,7 @@
 {
 	"name": "@dirupt/eslint-config",
 	"description": "Dirupt's shared ESLint presets",
-	"version": "2.2.3",
+	"version": "3.0.0",
 	"license": "MIT",
 	"private": false,
 	"type": "module",
