@@ -1,0 +1,61 @@
+{
+	"name": "@dirupt/code-quality",
+	"private": true,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dirupt-agency/code-quality.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dirupt-agency/code-quality/issues"
+	},
+	"homepage": "https://github.com/dirupt-agency/code-quality#readme",
+	"keywords": [
+		"dirupt",
+		"prettier",
+		"eslint",
+		"code-quality"
+	],
+	"author": {
+		"name": "Philippe DESPLATS",
+		"email": "philippe@dirupt.com",
+		"url": "https://www.dirupt.com"
+	},
+	"scripts": {
+		"build": "turbo build --cache-dir=.turbo",
+		"clean": "turbo clean && git clean -xdf node_modules dist .next",
+		"dev": "turbo dev --parallel",
+		"format": "turbo format --cache-dir=.turbo --continue -- --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+		"format:fix": "turbo format --cache-dir=.turbo --continue -- --write --cache --cache-location='node_modules/.cache/.prettiercache' --ignore-path='../../.gitignore'",
+		"lint": "turbo lint --cache-dir=.turbo --continue -- --cache --cache-location 'node_modules/.cache/.eslintcache'",
+		"lint:fix": "turbo lint --cache-dir=.turbo --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache'",
+		"typecheck": "turbo typecheck --cache-dir=.turbo",
+		"test": "turbo test --cache-dir=.turbo",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "turbo build --filter=web^... && changeset publish"
+	},
+	"packageManager": "pnpm@8.15.6",
+	"engines": {
+		"node": ">=22.6"
+	},
+	"prettier": "@dirupt/prettier-config",
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"pnpm": {
+		"overrides": {
+			"@types/react": "npm:types-react@19.0.0-rc.1",
+			"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+		}
+	},
+	"dependencies": {
+		"@changesets/cli": "^2.27.9",
+		"@dirupt/prettier-config": "workspace:*",
+		"prettier": "^3.3.3",
+		"turbo": "^2.2.3",
+		"typescript": "5.6.3"
+	}
+}

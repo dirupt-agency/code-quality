@@ -1,0 +1,42 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"dependsOn": [
+				"^build"
+			],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				".env*"
+			],
+			"outputs": [
+				".next/**",
+				"!.next/cache/**",
+				"next-env.d.ts",
+				"dist/**"
+			]
+		},
+		"dev": {
+			"persistent": true,
+			"cache": false
+		},
+		"format": {
+			"outputs": [
+				"node_modules/.cache/.prettiercache"
+			],
+			"outputLogs": "new-only"
+		},
+		"lint": {
+			"dependsOn": [
+				"^format"
+			],
+			"outputs": [
+				"node_modules/.cache/.eslintcache"
+			]
+		},
+		"clean": {
+			"cache": false
+		}
+	}
+}

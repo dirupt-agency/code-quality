@@ -1,0 +1,64 @@
+{
+	"name": "@dirupt/eslint-config",
+	"description": "Dirupt's shared ESLint presets",
+	"version": "2.2.3",
+	"license": "MIT",
+	"private": false,
+	"type": "module",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"src"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dirupt-agency/code-quality.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dirupt-agency/code-quality/issues"
+	},
+	"homepage": "https://github.com/dirupt-agency/code-quality#readme",
+	"keywords": [
+		"dirupt",
+		"eslint",
+		"config"
+	],
+	"author": {
+		"name": "Philippe DESPLATS",
+		"email": "philippe@dirupt.com",
+		"url": "https://www.dirupt.com"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"prettier": "@dirupt/prettier-config",
+	"scripts": {
+		"release": "release-it",
+		"lint": "eslint .",
+		"format": "prettier --check . --write"
+	},
+	"peerDependencies": {
+		"eslint": ">=9",
+		"eslint-plugin-react": ">=7",
+		"eslint-plugin-react-hooks": ">=5",
+		"prettier": ">=3"
+	},
+	"dependencies": {
+		"@eslint/js": "^9.12.0",
+		"@typescript-eslint/eslint-plugin": "^8.9.0",
+		"@typescript-eslint/parser": "^8.9.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"globals": "^15.11.0",
+		"typescript-eslint": "^8.9.0"
+	},
+	"devDependencies": {
+		"@dirupt/prettier-config": "workspace:*",
+		"@next/eslint-plugin-next": "^15.0.2",
+		"eslint": "^9.13.0",
+		"eslint-plugin-react": ">=7",
+		"eslint-plugin-react-hooks": ">=5",
+		"prettier": "^3.3.3"
+	}
+}

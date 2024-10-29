@@ -1,0 +1,46 @@
+{
+	"name": "@dirupt/prettier-config",
+	"description": "Dirupt's shared Prettier config",
+	"version": "1.0.1",
+	"private": false,
+	"license": "MIT",
+	"main": "index.mjs",
+	"files": [
+		"index.mjs"
+	],
+	"exports": {
+		".": "./index.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dirupt-agency/code-quality.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dirupt-agency/code-quality/issues"
+	},
+	"homepage": "https://github.com/dirupt-agency/code-quality#readme",
+	"keywords": [
+		"dirupt",
+		"prettier",
+		"config"
+	],
+	"author": {
+		"name": "Philippe DESPLATS",
+		"email": "philippe@dirupt.com",
+		"url": "https://www.dirupt.com"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"clean": "rm -rf .turbo node_modules",
+		"format": "prettier --check . --write"
+	},
+	"peerDependencies": {
+		"prettier": ">=3"
+	},
+	"dependencies": {
+		"prettier": "^3.3.3"
+	},
+	"prettier": "./index.mjs"
+}

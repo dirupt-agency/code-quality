@@ -1,0 +1,9 @@
+.idea
+.vscode
+node_modules
+.husky
+.editorconfig
+.eslintrc.js
+.versionrc.json
+commitlint.config.js
+temp
